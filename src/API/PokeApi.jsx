@@ -24,34 +24,38 @@ const PokeAPI = () => {
 
     return (
         <div className='PokeAPI container '>
-            <h1>PokeAPI</h1>
-            <form onSubmit={handleSubmit} className='Form bg-red-600 p-4'>
+            <form onSubmit={handleSubmit} className='Form rounded-lg bg-gray-900 p-4 flex justify-center items-center gap-4'>
                 <input 
+                    className='inputField p-2'
                     type="text" 
-                    placeholder='insert name'
+                    placeholder='Enter Pokemon name . . .'
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)} 
                 />
-                <button type="submit" className='btn'>Find Poke</button>
+                <button type="submit" className='btn border-2 p-2 hover:bg-orange-600 font-semibold'>Find Poke</button>
             </form>
-            <div className="container grid grid-cols-1 md:grid-cols-2 items-center">
+            <div className="container grid grid-cols-1 md:grid-cols-2 justify-center items-center">
             {poke && (
                 <>
-                <img className='pokeImage w-[300px] items-center' src={poke.sprites.front_default} alt="Gengar" />
-                   <div className="details">
+                <div className="imageContainer flex items-center justify-center">
+                    <img className='pokeImage w-[400px]' src={poke.sprites.front_default} alt="Gengar" />
+                </div>
+                <div className="details border-2 rounded-xl p-4 flex justify-around">
                     <div className="Bio">
+                            <h1 className='font-semibold uppercase bg-purple-500 pl-2 rounded-lg'>Bio</h1>
                             <h1>Name: {poke.name}</h1>
                             <h1>Order: {poke.order}</h1>
                             <h1>Height: {poke.height}</h1>
                             <h1>Weight: {poke.weight}</h1>
-                        </div>
-                        <div className="Stats">
+                    </div>
+                    <div className="Stats">
+                            <h1 className='font-semibold uppercase bg-purple-900 pl-2 rounded-lg'>Stats</h1>
                             <h1>HP: {poke.stats[0].base_stat}</h1>
                             <h1>ATK: {poke.stats[1].base_stat}</h1>
                             <h1>DEF: {poke.stats[2].base_stat}</h1>
                             <h1>SPEC ATK: {poke.stats[3].base_stat}</h1>
-                        </div>
-                   </div>
+                    </div>
+                </div>
                 </>
             )}
             </div>
