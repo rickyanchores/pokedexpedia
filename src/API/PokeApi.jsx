@@ -19,7 +19,7 @@ const PokeAPI = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetchData(inputValue);
+        fetchData(inputValue.toLowerCase());
     };
 
     return (
