@@ -38,20 +38,20 @@ const PokeAPI = () => {
             <div className="container grid grid-cols-1 md:grid-cols-2 justify-center items-center pt-4 gap-4">
             {poke && (
                 <>
-                <div className="imageContainer flex items-center justify-center">
-                    <img className='pokeImage w-[400px] bg-zinc-900 rounded-xl' src={poke.sprites.front_default} alt="Gengar" />
+                <div className="imageContainer flex flex-col items-center justify-center">
+                    <h1 className='pokeName font-bold capitalize m-2 text-2xl'>{poke.name}</h1>
+                    <img className='pokeImage w-[400px]' src={poke.sprites.front_default} alt="Gengar" />
                 </div>
                 <div className="details rounded-xl p-4 flex justify-around items-center bg-zinc-900 h-full">
                     <div className="Bio">
-                            <h1 className='font-semibold uppercase bg-purple-500 p-2 rounded-lg'>Bio</h1>
-                            <h1>Name: {poke.name}</h1>
+                            <h1 className='font-semibold uppercase bg-purple-500 p-2 m-2 rounded-lg'>Bio</h1>
                             <h1>TYPE: {poke.types[0].type.name}</h1>
                             <h1>Order: {poke.order}</h1>
                             <h1>Height: {poke.height}</h1>
                             <h1>Weight: {poke.weight}</h1>
                     </div>
                     <div className="Stats">
-                            <h1 className='font-semibold uppercase bg-purple-900 p-2 rounded-lg'>Stats</h1>
+                            <h1 className='font-semibold uppercase bg-purple-900 p-2 m-2 rounded-lg'>Stats</h1>
                             <h1>HP: {poke.stats[0].base_stat}</h1>
                             <h1>ATK: {poke.stats[1].base_stat}</h1>
                             <h1>DEF: {poke.stats[2].base_stat}</h1>
