@@ -40,13 +40,13 @@ const PokeAPI = () => {
                 <>
                 <div className="imageContainer flex flex-col items-center justify-center">
                     <h1 className='pokeName border-4 rounded-md border-white p-2 font-bold capitalize m-2 text-2xl'>{poke.name}</h1>
-                    <img className='pokeImage w-[400px]' src={poke.sprites.front_default} alt="Gengar" />
+                    <img className='pokeImage w-[400px]' src={poke.sprites.front_default} alt={poke.name} />
                 </div>
                 <div className="details rounded-xl p-4 flex justify-around items-center bg-zinc-900 h-full">
                     <div className="Bio">
                         <h1 className=' text-orange-600 font-bold uppercase'>Bio</h1>
                             <h1>I Type: {poke.types[0].type.name}</h1>
-                            <h1>II Type: {poke.types[1].type.name}</h1>
+                            <h1>II Type: {poke.types[1] ? poke.types[1].type.name : 'None'}</h1>
                             <h1>Order: {poke.order}</h1>
                             <h1>Height: {poke.height}</h1>
                             <h1>Weight: {poke.weight}</h1>
