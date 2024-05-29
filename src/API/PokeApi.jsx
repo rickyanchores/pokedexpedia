@@ -39,7 +39,7 @@ const PokeAPI = () => {
             {poke && (
                 <>
                 <div className="imageContainer flex flex-col items-center justify-center">
-                    <h1 className='pokeName border-4 rounded-md border-white p-2 font-bold capitalize m-2 text-2xl'>{poke.name}</h1>
+                    <h1 className='pokeName text-orange-600 p-2 font-bold capitalize m-2 text-2xl'>{poke.name}</h1>
                     <img className='pokeImage w-[400px]' src={poke.sprites.front_default} alt={poke.name} />
                 </div>
                 <div className="details rounded-xl p-4 flex justify-around items-center bg-zinc-900 h-full">
